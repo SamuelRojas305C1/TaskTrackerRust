@@ -3,7 +3,7 @@ mod storage;
 
 use std::env;
 use std::process;
-use task::Task;
+use task::{Task, TaskStatus};
 use storage::{load_tasks, save_tasks};
 
 fn main() {
@@ -29,8 +29,8 @@ fn main() {
         "list" => handle_list(cmd_args, &tasks),
         "update" => handle_update(cmd_args, &mut tasks),
         "delete" => handle_delete(cmd_args, &mut tasks),
-        "mark-in-progress" => handle_mark_status(cmd_args, &mut tasks, "En Curso"),
-        "mark-done" => handle_mark_status(cmd_args, &mut tasks, "Hecho"),
+        "mark-in-progress" => handle_mark_status(cmd_args, &mut tasks, TaskStatus::EnCurso),
+        "mark-done" => handle_mark_status(cmd_args, &mut tasks, TaskStatus::Hecho),
         _ => {
             eprintln!("Comando desconocido: {}", command);
             process::exit(1);
@@ -55,12 +55,26 @@ fn handle_add(args: &[String], tasks: &mut Vec<Task>) {
 }
 
 fn handle_list(args: &[String], tasks: &[Task]) {
-    let filter = args.first().map(|s| s.as_str()).unwrap_or("");
+    // Parsear el filtro de forma case-insensitive y validarlo
+    let filter: Option<TaskStatus> = args.first().and_then(|s| {
+        if s.is_empty() {
+            return None;
+        }
+        let parsed = TaskStatus::from_str_ci(s);
+        if parsed.is_none() {
+            eprintln!(
+                "Filtro inválido '{}'. Valores válidos: pendiente, en curso, hecho",
+                s
+            );
+            process::exit(1);
+        }
+        parsed
+    });
 
     println!("{:<4} | {:<12} | {}", "ID", "Estado", "Descripción");
     println!("{:-<4}---{:-<12}---{:-<20}", "", "", "");
     for task in tasks {
-        if filter.is_empty() || filter == task.status {
+        if filter.is_none() || filter.as_ref() == Some(&task.status) {
             println!("{:<4} | {:<12} | {}", task.id, task.status, task.description);
         }
     }
@@ -125,9 +139,9 @@ fn handle_delete(args: &[String], tasks: &mut Vec<Task>) {
     }
 }
 
-fn handle_mark_status(args: &[String], tasks: &mut Vec<Task>, new_status: &str) {
+fn handle_mark_status(args: &[String], tasks: &mut Vec<Task>, new_status: TaskStatus) {
     if args.is_empty() {
-        eprintln!("Uso: {} <id>", new_status);
+        eprintln!("Uso: mark-in-progress|mark-done <id>");
         process::exit(1);
     }
     let id: u32 = match args[0].parse() {
@@ -140,12 +154,13 @@ fn handle_mark_status(args: &[String], tasks: &mut Vec<Task>, new_status: &str) 
     let task = tasks.iter_mut().find(|t| t.id == id);
     match task {
         Some(t) => {
+            let label = new_status.to_string();
             t.set_status(new_status);
             if let Err(e) = save_tasks(tasks) {
                 eprintln!("Error al guardar: {}", e);
                 process::exit(1);
             }
-            println!("Tarea {} marcada como {}", id, new_status);
+            println!("Tarea {} marcada como {}", id, label);
         }
         None => {
             eprintln!("No se encontró tarea con ID {}", id);
