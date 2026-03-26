@@ -44,7 +44,7 @@ fn handle_add(args: &[String], tasks: &mut Vec<Task>) {
         process::exit(1);
     }
     let description = args.join(" ");
-    let new_id = tasks.last().map_or(1, |t| t.id + 1);
+    let new_id = tasks.iter().map(|t| t.id).max().map_or(1, |max| max + 1);
     let new_task = Task::new(new_id, description);
     tasks.push(new_task);
     if let Err(e) = save_tasks(tasks) {
