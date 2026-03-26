@@ -38,6 +38,15 @@ fn main() {
     }
 }
 
+/// Parsea un string a u32 (ID de tarea).
+/// Si falla, imprime un error descriptivo y termina el proceso.
+fn parse_id(s: &str) -> u32 {
+    s.parse().unwrap_or_else(|_| {
+        eprintln!("Error: ID inválido '{}' — debe ser un número entero positivo.", s);
+        process::exit(1);
+    })
+}
+
 fn handle_add(args: &[String], tasks: &mut Vec<Task>) {
     if args.is_empty() {
         eprintln!("Error: Debes proporcionar una descripción. Ejemplo: add \"Mi tarea\"");
@@ -85,13 +94,7 @@ fn handle_update(args: &[String], tasks: &mut Vec<Task>) {
         eprintln!("Uso: update <id> <nueva descripción>");
         process::exit(1);
     }
-    let id: u32 = match args[0].parse() {
-        Ok(i) => i,
-        Err(_) => {
-            eprintln!("ID inválido");
-            process::exit(1);
-        }
-    };
+    let id = parse_id(&args[0]);
     let new_desc = args[1..].join(" ");
     let task = tasks.iter_mut().find(|t| t.id == id);
     match task {
@@ -115,13 +118,7 @@ fn handle_delete(args: &[String], tasks: &mut Vec<Task>) {
         eprintln!("Uso: delete <id>");
         process::exit(1);
     }
-    let id: u32 = match args[0].parse() {
-        Ok(i) => i,
-        Err(_) => {
-            eprintln!("ID inválido");
-            process::exit(1);
-        }
-    };
+    let id = parse_id(&args[0]);
     let pos = tasks.iter().position(|t| t.id == id);
     match pos {
         Some(idx) => {
@@ -144,13 +141,7 @@ fn handle_mark_status(args: &[String], tasks: &mut Vec<Task>, new_status: TaskSt
         eprintln!("Uso: mark-in-progress|mark-done <id>");
         process::exit(1);
     }
-    let id: u32 = match args[0].parse() {
-        Ok(i) => i,
-        Err(_) => {
-            eprintln!("ID inválido");
-            process::exit(1);
-        }
-    };
+    let id = parse_id(&args[0]);
     let task = tasks.iter_mut().find(|t| t.id == id);
     match task {
         Some(t) => {
