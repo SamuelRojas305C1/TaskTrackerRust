@@ -31,46 +31,46 @@ El ejecutable se encuentra en `target/debug/task_tracker_rust`.
 
 #### Agregar tarea
 ```bash
-cargo run add "Descripción de la tarea"
+cargo run -- add "Descripción de la tarea"
 ```
 
 #### Listar tareas
 ```bash
-cargo run list
+cargo run -- list
 ```
 
 Para listar tareas por estado:
 ```bash
-cargo run list pendiente
-cargo run list en-curso
-cargo run list hecho
+cargo run -- list pendiente
+cargo run -- list en-curso
+cargo run -- list hecho
 ```
 
 #### Actualizar tarea
 ```bash
-cargo run update <id> "Nueva descripción"
+cargo run -- update <id> "Nueva descripción"
 ```
 
 #### Eliminar tarea
 ```bash
-cargo run delete <id>
+cargo run -- delete <id>
 ```
 
 #### Marcar como en curso
 ```bash
-cargo run mark-in-progress <id>
+cargo run -- mark-in-progress <id>
 ```
 
 #### Marcar como hecha
 ```bash
-cargo run mark-done <id>
+cargo run -- mark-done <id>
 ```
 
 ## Tests
 
 Para ejecutar los tests unitarios:
 ```bash
-cargo test
+cargo -- test
 ```
 
 ## Estructura del proyecto
