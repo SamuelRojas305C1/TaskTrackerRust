@@ -1,22 +1,25 @@
 mod task;
 mod storage;
+mod user;
+mod auth;
 
 use std::env;
 use std::process;
 use task::Task;
-use storage::{load_tasks, save_tasks};
+use storage::{load_tasks_for_user, save_tasks_for_user};
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    if args.len() < 2 {
-        eprintln!("Error: Se requiere un comando. Ejemplos: add, list, update, delete, mark-in-progress, mark-done");
-        process::exit(1);
-    }
 
-    let command = &args[1];
-    let cmd_args = &args[2..];
+    let username = match auth::authenticate_or_register() {
+        Ok(u) => u,
+        Err(e) => {
+            eprintln!("Error en autenticacion: {}", e);
+            process::exit(1);
+        }
+    };
 
-    let mut tasks = match load_tasks() {
+
+    let mut tasks = match load_tasks_for_user(&username) {
         Ok(t) => t,
         Err(e) => {
             eprintln!("Error al cargar tareas: {}", e);
@@ -24,13 +27,24 @@ fn main() {
         }
     };
 
+
+    let args: Vec<String> = env::args().collect();
+    if args.len() < 2 {
+        eprintln!("Uso: tasktracker <comando> [argumentos]");
+        eprintln!("Comandos: add, list, update, delete, mark-in-progress, mark-done");
+        process::exit(1);
+    }
+
+    let command = &args[1];
+    let cmd_args = &args[2..];
+
     match command.as_str() {
-        "add" => handle_add(cmd_args, &mut tasks),
+        "add" => handle_add(cmd_args, &mut tasks, &username),
         "list" => handle_list(cmd_args, &tasks),
-        "update" => handle_update(cmd_args, &mut tasks),
-        "delete" => handle_delete(cmd_args, &mut tasks),
-        "mark-in-progress" => handle_mark_status(cmd_args, &mut tasks, "En Curso"),
-        "mark-done" => handle_mark_status(cmd_args, &mut tasks, "Hecho"),
+        "update" => handle_update(cmd_args, &mut tasks, &username),
+        "delete" => handle_delete(cmd_args, &mut tasks, &username),
+        "mark-in-progress" => handle_mark_status(cmd_args, &mut tasks, &username, "in-progress"),
+        "mark-done" => handle_mark_status(cmd_args, &mut tasks, &username, "done"),
         _ => {
             eprintln!("Comando desconocido: {}", command);
             process::exit(1);
@@ -38,16 +52,16 @@ fn main() {
     }
 }
 
-fn handle_add(args: &[String], tasks: &mut Vec<Task>) {
+fn handle_add(args: &[String], tasks: &mut Vec<Task>, username: &str) {
     if args.is_empty() {
-        eprintln!("Error: Debes proporcionar una descripción. Ejemplo: add \"Mi tarea\"");
+        eprintln!("Error: Debes proporcionar una descripcion. Ejemplo: add \"Mi tarea\"");
         process::exit(1);
     }
     let description = args.join(" ");
     let new_id = tasks.last().map_or(1, |t| t.id + 1);
     let new_task = Task::new(new_id, description);
     tasks.push(new_task);
-    if let Err(e) = save_tasks(tasks) {
+    if let Err(e) = save_tasks_for_user(username, tasks) {
         eprintln!("Error al guardar la tarea: {}", e);
         process::exit(1);
     }
@@ -56,8 +70,7 @@ fn handle_add(args: &[String], tasks: &mut Vec<Task>) {
 
 fn handle_list(args: &[String], tasks: &[Task]) {
     let filter = args.first().map(|s| s.as_str()).unwrap_or("");
-
-    println!("{:<4} | {:<12} | {}", "ID", "Estado", "Descripción");
+    println!("{:<4} | {:<12} | {}", "ID", "Estado", "Descripcion");
     println!("{:-<4}---{:-<12}---{:-<20}", "", "", "");
     for task in tasks {
         if filter.is_empty() || filter == task.status {
@@ -66,15 +79,15 @@ fn handle_list(args: &[String], tasks: &[Task]) {
     }
 }
 
-fn handle_update(args: &[String], tasks: &mut Vec<Task>) {
+fn handle_update(args: &[String], tasks: &mut Vec<Task>, username: &str) {
     if args.len() < 2 {
-        eprintln!("Uso: update <id> <nueva descripción>");
+        eprintln!("Uso: update <id> <nueva descripcion>");
         process::exit(1);
     }
     let id: u32 = match args[0].parse() {
         Ok(i) => i,
         Err(_) => {
-            eprintln!("ID inválido");
+            eprintln!("ID invalido");
             process::exit(1);
         }
     };
@@ -83,7 +96,7 @@ fn handle_update(args: &[String], tasks: &mut Vec<Task>) {
     match task {
         Some(t) => {
             t.update_description(new_desc);
-            if let Err(e) = save_tasks(tasks) {
+            if let Err(e) = save_tasks_for_user(username, tasks) {
                 eprintln!("Error al guardar: {}", e);
                 process::exit(1);
             }
@@ -96,7 +109,7 @@ fn handle_update(args: &[String], tasks: &mut Vec<Task>) {
     }
 }
 
-fn handle_delete(args: &[String], tasks: &mut Vec<Task>) {
+fn handle_delete(args: &[String], tasks: &mut Vec<Task>, username: &str) {
     if args.is_empty() {
         eprintln!("Uso: delete <id>");
         process::exit(1);
@@ -112,7 +125,7 @@ fn handle_delete(args: &[String], tasks: &mut Vec<Task>) {
     match pos {
         Some(idx) => {
             tasks.remove(idx);
-            if let Err(e) = save_tasks(tasks) {
+            if let Err(e) = save_tasks_for_user(username, tasks) {
                 eprintln!("Error al guardar: {}", e);
                 process::exit(1);
             }
@@ -125,7 +138,7 @@ fn handle_delete(args: &[String], tasks: &mut Vec<Task>) {
     }
 }
 
-fn handle_mark_status(args: &[String], tasks: &mut Vec<Task>, new_status: &str) {
+fn handle_mark_status(args: &[String], tasks: &mut Vec<Task>, username: &str, new_status: &str) {
     if args.is_empty() {
         eprintln!("Uso: {} <id>", new_status);
         process::exit(1);
@@ -141,14 +154,14 @@ fn handle_mark_status(args: &[String], tasks: &mut Vec<Task>, new_status: &str) 
     match task {
         Some(t) => {
             t.set_status(new_status);
-            if let Err(e) = save_tasks(tasks) {
+            if let Err(e) = save_tasks_for_user(username, tasks) {
                 eprintln!("Error al guardar: {}", e);
                 process::exit(1);
             }
             println!("Tarea {} marcada como {}", id, new_status);
         }
         None => {
-            eprintln!("No se encontró tarea con ID {}", id);
+            eprintln!("No se encontro tarea con ID {}", id);
             process::exit(1);
         }
     }

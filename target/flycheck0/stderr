@@ -1,109 +1,12 @@
-   0.056076300s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 13419124083.439281600s > 13419124053.840691000s "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\num-traits-0.2.19"
-   0.056338200s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 13419124083.626924100s > 13419124053.845717700s "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.228"
-   0.056573300s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 13419124083.708607900s > 13419124053.848344100s "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_core-1.0.228"
-   0.056860100s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 13419124083.536783400s > 13419124053.841696400s "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.106"
-   0.057387100s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 13419124083.566100700s > 13419124053.843707300s "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.45"
-   0.060129000s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 13419124083.796540600s > 13419124053.850354900s "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_json-1.0.149"
-   0.060324600s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 13419124083.818142300s > 13419124053.851359300s "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\zmij-1.0.21"
-   0.060512500s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: fingerprint error for task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)/Check { test: false }/TargetInner { name: "task_tracker_rust", doc: true, ..: with_path("C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs", Edition2021) }
-   0.060544600s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust\target\debug\.fingerprint\task_tracker_rust-a7a625faddce447d\bin-task_tracker_rust`
-
-Caused by:
-    El sistema no puede encontrar el archivo especificado. (os error 2)
-
-Stack backtrace:
-   0: git_midx_writer_dump
-   1: git_midx_writer_dump
-   2: git_midx_writer_dump
-   3: git_midx_writer_dump
-   4: git_filter_source_repo
-   5: git_filter_source_repo
-   6: git_filter_source_repo
-   7: git_filter_source_repo
-   8: git_filter_source_repo
-   9: git_filter_source_repo
-  10: git_filter_source_repo
-  11: git_libgit2_prerelease
-  12: <unknown>
-  13: <unknown>
-  14: <unknown>
-  15: <unknown>
-  16: git_midx_writer_dump
-  17: git_filter_source_repo
-  18: git_midx_writer_dump
-  19: BaseThreadInitThunk
-  20: RtlUserThreadStart
-   0.071281800s  INFO prepare_target{force=false package_id=chrono v0.4.44 target="chrono"}: cargo::core::compiler::fingerprint: fingerprint dirty for chrono v0.4.44/Check { test: false }/TargetInner { ..: lib_target("chrono", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\chrono-0.4.44\\src\\lib.rs", Edition2021) }
-   0.071313000s  INFO prepare_target{force=false package_id=chrono v0.4.44 target="chrono"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "num_traits" })
-   0.073431400s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="num_traits"}: cargo::core::compiler::fingerprint: fingerprint dirty for num-traits v0.2.19/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("num_traits", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\num-traits-0.2.19\\src\\lib.rs", Edition2021) }
-   0.073452400s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="num_traits"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "build_script_build" })
-   0.075828300s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for num-traits v0.2.19/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\num-traits-0.2.19\\build.rs", Edition2021) }
-   0.075846900s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 13419124083, nanos: 439281600 }, max_mtime: FileTime { seconds: 13419124053, nanos: 840691000 } })
-   0.077881300s  INFO prepare_target{force=false package_id=serde v1.0.228 target="serde"}: cargo::core::compiler::fingerprint: fingerprint dirty for serde v1.0.228/Check { test: false }/TargetInner { ..: lib_target("serde", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.228\\src\\lib.rs", Edition2021) }
-   0.077901800s  INFO prepare_target{force=false package_id=serde v1.0.228 target="serde"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "serde_derive" })
-   0.080140500s  INFO prepare_target{force=false package_id=serde v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for serde v1.0.228/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.228\\build.rs", Edition2021) }
-   0.080159200s  INFO prepare_target{force=false package_id=serde v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 13419124083, nanos: 626924100 }, max_mtime: FileTime { seconds: 13419124053, nanos: 845717700 } })
-   0.082049200s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="serde_core"}: cargo::core::compiler::fingerprint: fingerprint dirty for serde_core v1.0.228/Check { test: false }/TargetInner { ..: lib_target("serde_core", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_core-1.0.228\\src\\lib.rs", Edition2021) }
-   0.082069100s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="serde_core"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "build_script_build" })
-   0.084417200s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for serde_core v1.0.228/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_core-1.0.228\\build.rs", Edition2021) }
-   0.084435900s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 13419124083, nanos: 708607900 }, max_mtime: FileTime { seconds: 13419124053, nanos: 848344100 } })
-   0.086194800s  INFO prepare_target{force=false package_id=serde_derive v1.0.228 target="serde_derive"}: cargo::core::compiler::fingerprint: fingerprint dirty for serde_derive v1.0.228/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("serde_derive", ["proc-macro"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_derive-1.0.228\\src\\lib.rs", Edition2021) }
-   0.086215100s  INFO prepare_target{force=false package_id=serde_derive v1.0.228 target="serde_derive"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "proc_macro2" })
-   0.087909800s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="proc_macro2"}: cargo::core::compiler::fingerprint: fingerprint dirty for proc-macro2 v1.0.106/Build/TargetInner { ..: lib_target("proc_macro2", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.106\\src\\lib.rs", Edition2021) }
-   0.087928600s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="proc_macro2"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "build_script_build" })
-   0.090225600s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for proc-macro2 v1.0.106/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.106\\build.rs", Edition2021) }
-   0.090245200s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 13419124083, nanos: 536783400 }, max_mtime: FileTime { seconds: 13419124053, nanos: 841696400 } })
-   0.092097700s  INFO prepare_target{force=false package_id=quote v1.0.45 target="quote"}: cargo::core::compiler::fingerprint: fingerprint dirty for quote v1.0.45/Build/TargetInner { ..: lib_target("quote", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.45\\src\\lib.rs", Edition2021) }
-   0.092117100s  INFO prepare_target{force=false package_id=quote v1.0.45 target="quote"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "proc_macro2" })
-   0.094397400s  INFO prepare_target{force=false package_id=quote v1.0.45 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for quote v1.0.45/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.45\\build.rs", Edition2021) }
-   0.094419300s  INFO prepare_target{force=false package_id=quote v1.0.45 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 13419124083, nanos: 566100700 }, max_mtime: FileTime { seconds: 13419124053, nanos: 843707300 } })
-   0.096279900s  INFO prepare_target{force=false package_id=syn v2.0.117 target="syn"}: cargo::core::compiler::fingerprint: fingerprint dirty for syn v2.0.117/Build/TargetInner { ..: lib_target("syn", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\syn-2.0.117\\src\\lib.rs", Edition2021) }
-   0.096299500s  INFO prepare_target{force=false package_id=syn v2.0.117 target="syn"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "proc_macro2" })
-   0.098634700s  INFO prepare_target{force=false package_id=serde_json v1.0.149 target="serde_json"}: cargo::core::compiler::fingerprint: fingerprint dirty for serde_json v1.0.149/Check { test: false }/TargetInner { ..: lib_target("serde_json", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_json-1.0.149\\src\\lib.rs", Edition2021) }
-   0.098654800s  INFO prepare_target{force=false package_id=serde_json v1.0.149 target="serde_json"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "serde_core" })
-   0.102517200s  INFO prepare_target{force=false package_id=serde_json v1.0.149 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for serde_json v1.0.149/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_json-1.0.149\\build.rs", Edition2021) }
-   0.102538500s  INFO prepare_target{force=false package_id=serde_json v1.0.149 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 13419124083, nanos: 796540600 }, max_mtime: FileTime { seconds: 13419124053, nanos: 850354900 } })
-   0.104194500s  INFO prepare_target{force=false package_id=zmij v1.0.21 target="zmij"}: cargo::core::compiler::fingerprint: fingerprint dirty for zmij v1.0.21/Check { test: false }/TargetInner { ..: lib_target("zmij", ["lib"], "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\zmij-1.0.21\\src\\lib.rs", Edition2021) }
-   0.104214500s  INFO prepare_target{force=false package_id=zmij v1.0.21 target="zmij"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "build_script_build" })
-   0.106393900s  INFO prepare_target{force=false package_id=zmij v1.0.21 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for zmij v1.0.21/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Usuario\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\zmij-1.0.21\\build.rs", Edition2021) }
-   0.106413300s  INFO prepare_target{force=false package_id=zmij v1.0.21 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 13419124083, nanos: 818142300 }, max_mtime: FileTime { seconds: 13419124053, nanos: 851359300 } })
-   0.106938400s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: fingerprint error for task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)/Check { test: true }/TargetInner { name: "task_tracker_rust", doc: true, ..: with_path("C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs", Edition2021) }
-   0.106958500s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust\target\debug\.fingerprint\task_tracker_rust-90e92c84d238e366\test-bin-task_tracker_rust`
-
-Caused by:
-    El sistema no puede encontrar el archivo especificado. (os error 2)
-
-Stack backtrace:
-   0: git_midx_writer_dump
-   1: git_midx_writer_dump
-   2: git_midx_writer_dump
-   3: git_midx_writer_dump
-   4: git_filter_source_repo
-   5: git_filter_source_repo
-   6: git_filter_source_repo
-   7: git_filter_source_repo
-   8: git_filter_source_repo
-   9: git_filter_source_repo
-  10: git_filter_source_repo
-  11: git_libgit2_prerelease
-  12: <unknown>
-  13: <unknown>
-  14: <unknown>
-  15: <unknown>
-  16: git_midx_writer_dump
-  17: git_filter_source_repo
-  18: git_midx_writer_dump
-  19: BaseThreadInitThunk
-  20: RtlUserThreadStart
-   Compiling proc-macro2 v1.0.106
-   Compiling quote v1.0.45
-   Compiling serde_core v1.0.228
-   Compiling zmij v1.0.21
-   Compiling serde v1.0.228
-   Compiling serde_json v1.0.149
-   Compiling num-traits v0.2.19
-   Compiling syn v2.0.117
-   Compiling serde_derive v1.0.228
-    Checking chrono v0.4.44
-    Checking task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 7.60s
+   0.131829100s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs"
+   0.131900200s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\target\\debug\\.fingerprint\\task_tracker_rust-08450e4f13598ec2\\dep-bin-task_tracker_rust"
+   0.131926600s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13419128637, nanos: 324578400 } < FileTime { seconds: 13419128653, nanos: 593847700 }
+   0.132376400s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: fingerprint dirty for task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)/Check { test: false }/TargetInner { name: "task_tracker_rust", doc: true, ..: with_path("C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs", Edition2021) }
+   0.132455400s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\target\\debug\\.fingerprint\\task_tracker_rust-08450e4f13598ec2\\dep-bin-task_tracker_rust", reference_mtime: FileTime { seconds: 13419128637, nanos: 324578400 }, stale: "C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs", stale_mtime: FileTime { seconds: 13419128653, nanos: 593847700 } }))
+   0.163205500s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs"
+   0.163248300s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\target\\debug\\.fingerprint\\task_tracker_rust-cf87394c46c92a31\\dep-test-bin-task_tracker_rust"
+   0.163273100s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13419128637, nanos: 324578400 } < FileTime { seconds: 13419128653, nanos: 593847700 }
+   0.163615300s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: fingerprint dirty for task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)/Check { test: true }/TargetInner { name: "task_tracker_rust", doc: true, ..: with_path("C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs", Edition2021) }
+   0.163665900s  INFO prepare_target{force=false package_id=task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\target\\debug\\.fingerprint\\task_tracker_rust-cf87394c46c92a31\\dep-test-bin-task_tracker_rust", reference_mtime: FileTime { seconds: 13419128637, nanos: 324578400 }, stale: "C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs", stale_mtime: FileTime { seconds: 13419128653, nanos: 593847700 } }))
+    Checking task_tracker_rust v0.2.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.57s
