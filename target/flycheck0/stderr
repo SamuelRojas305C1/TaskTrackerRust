@@ -1,0 +1,60 @@
+   0.040703900s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: fingerprint error for task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)/Check { test: false }/TargetInner { name: "task_tracker_rust", doc: true, ..: with_path("C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs", Edition2021) }
+   0.040766300s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust\target\debug\.fingerprint\task_tracker_rust-a7a625faddce447d\bin-task_tracker_rust`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.059033000s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint: fingerprint error for task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)/Check { test: true }/TargetInner { name: "task_tracker_rust", doc: true, ..: with_path("C:\\Users\\Usuario\\Desktop\\Universidad\\Semestre 7to con 8vo\\Lenguaje de programacionn\\TaskTrackerRust\\src\\main.rs", Edition2021) }
+   0.059061800s  INFO prepare_target{force=false package_id=task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust) target="task_tracker_rust"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust\target\debug\.fingerprint\task_tracker_rust-90e92c84d238e366\test-bin-task_tracker_rust`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+    Checking task_tracker_rust v0.1.0 (C:\Users\Usuario\Desktop\Universidad\Semestre 7to con 8vo\Lenguaje de programacionn\TaskTrackerRust)
+error: could not compile `task_tracker_rust` (bin "task_tracker_rust") due to 4 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `task_tracker_rust` (bin "task_tracker_rust" test) due to 4 previous errors
